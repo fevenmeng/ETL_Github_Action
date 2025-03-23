@@ -3,3 +3,4 @@ fake_useragent==2.0.3
 nltk==3.9.1
 pandas==2.2.3
 Requests==2.32.3
+psycopg2==2.9.10
