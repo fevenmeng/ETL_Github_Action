@@ -54,19 +54,18 @@ df['time_uploaded'] = pd.to_datetime(df['time_uploaded'])
 #Analyze the transformed data to determine the correct data type for each column.
 #Examples of datatypes are: text, integer, timestamp, date.
 # Database connection parameters
-import os
+import psycopg2
+import pandas as pd
 
+# Database connection parameters
 db_params = {
     "dbname": "postgres",
     "user": "testtech",
-    "password":os.getenv("DB_PASSWORD"),#os.getenv() #"Your_password",
+    "password": "Your_password",
     "host": "testtech.postgres.database.azure.com",
     "port": "5432"
 }
 
-
-conn = None  # Initialize conn to None
-cursor = None  # Initialize cursor to None
 
 try:
     # Connect to PostgreSQL
@@ -93,13 +92,12 @@ try:
 
 except Exception as e:
     print("Error:", e)
+
 finally:
-    if cursor:
-        cursor.close()  # Close the cursor if it's open
     if conn:
-        conn.close()  # Close the connection if it's open
-#"password": os.getenv("DB_PASSWORD") 
+        cursor.close()
+        conn.close()
 
 
-import os
-print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
+
+#"password": os.getenv("DB_PASSWORD")  
