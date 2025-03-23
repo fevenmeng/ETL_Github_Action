@@ -3,6 +3,8 @@ import psycopg2
 import os
 from get_data import get_article_data
 
+# Add more print/logging to ensure the script is reaching the database update part
+
 df = get_article_data()
 print(df)
 
@@ -96,4 +98,8 @@ finally:
         cursor.close()  # Close the cursor if it's open
     if conn:
         conn.close()  # Close the connection if it's open
-#"password": os.getenv("DB_PASSWORD")        
+#"password": os.getenv("DB_PASSWORD") 
+
+
+import os
+print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
