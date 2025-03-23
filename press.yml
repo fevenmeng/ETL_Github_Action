@@ -1,5 +1,4 @@
 name: Runtimeeeeeeeee
-
 on:
   schedule:
     - cron: "0 * * * *"  # Runs every 3 hours
