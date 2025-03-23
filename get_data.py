@@ -11,7 +11,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def get_article_data():
     url = 'https://dev.to/latest'
-
+#
     ua = UserAgent()
     userAgent = ua.random
     headers = {'User-Agent': userAgent}
